@@ -1,7 +1,7 @@
   <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
       <div class="d-flex align-items-center">
-        <i class="icofont-home"></i> Bagian Hukum Sekretariat Daerah
+        <i class="icofont-home"></i> Sekretariat DPRD
       </div>
       <div class="d-flex align-items-center">
         <i class="icofont-building"></i> Pemerintah Kota Madiun

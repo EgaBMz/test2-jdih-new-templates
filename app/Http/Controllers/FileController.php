@@ -24,10 +24,10 @@ class FileController extends Controller
             if (decrypt($request->status)=='t') {
                 return Storage::response(decrypt($request->file));
             }else {
-                return 'Hubungi Bagian Hukum Sekretariat Daerah Kota Madiun untuk mendapatkan informasi dokumen!';
+                return 'Hubungi Sekretariat DPRD Kota Madiun untuk mendapatkan informasi dokumen!';
             }
         } catch (\Throwable $th) {
-            return 'Hubungi Bagian Hukum Sekretariat Daerah Kota Madiun untuk mendapatkan informasi dokumen!';
+            return 'Hubungi Sekretariat DPRD Kota Madiun untuk mendapatkan informasi dokumen!';
         }
     }
 
