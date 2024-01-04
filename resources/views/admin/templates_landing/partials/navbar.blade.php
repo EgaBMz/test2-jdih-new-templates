@@ -25,7 +25,7 @@
           <!-- <li class="{{ Request::is('*kontak*') ? 'active' : '' }}"><a href="{{ route('kontak') }}">Kontak</a></li> -->
         </ul>
       </nav>
-      <a href="https://hukum.madiunkota.go.id/" target="_blank" class="appointment-btn scrollto">Website Bagian Hukum</a>
+      <!-- <a href="https://hukum.madiunkota.go.id/" target="_blank" class="appointment-btn scrollto">Website Bagian Hukum</a> -->
       <a href="{{ route('kontak') }}" class="appointment-btn scrollto">Kontak</a>
     </div>
   </header>
