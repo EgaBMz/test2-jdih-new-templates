@@ -10,6 +10,7 @@ use App\Dokumen;
 use App\Berita;
 use App\surveygender;
 use App\Bankumaskin;
+use App\Portofolio;
 use Crypt;
 use Response;
 use Illuminate\Support\Facades\DB;
@@ -305,12 +306,26 @@ class LandingController extends Controller
         return view('kontak');
     }
 
+    public function layanan()
+    {
+        return view('layanan');
+    }
+    
     public function berita()
     {
         $data = Berita::where('beritas.publik', '=', 1)->orderBy('created_at', 'DESC')->get();
 
         return view('berita', [
             'berita' => $data
+        ]);
+    }
+
+    public function portofolio()
+    {
+        $data = Portofolio::where('portofolios.publik', '=', 1)->orderBy('created_at', 'DESC')->get();
+
+        return view('portofolio', [
+            'portofolio' => $data
         ]);
     }
 
@@ -333,6 +348,19 @@ class LandingController extends Controller
 
         return view('berita_detail', [
             'berita' => $data
+        ]);
+    }
+
+    public function portofolio_detail(Request $request)
+    {
+        $data = Portofolio::select('portofolios.*', 'users.name', 'users.email')
+                        ->join('users','users.id','=','portofolios.created_by')
+                        ->where('portofolios.id', '=', $request->portofolio)
+                        ->orderBy('created_at','DESC')
+                        ->get();
+
+        return view('portofolio_detail', [
+            'portofolio' => $data
         ]);
     }
 

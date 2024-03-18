@@ -20,13 +20,16 @@
                     </ul>
                 </li>
                 <li class="{{ Request::is('*/berita*') ? 'active' : '' }}">
-                    <a href="{{ route('admin.berita.index') }}"><i class="fa fa-picture-o"></i> <span class="nav-label">Berita</span></a>
+                    <a href="{{ route('admin.berita.index') }}"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Berita</span></a>
                 </li>
                 @elseif(auth()->user()->role == 'validator')
                 <li class="{{ Request::is('*/rekap/opd*') ? 'active' : '' }}">
                     <a href="{{ route('admin.dokumen.index') }}"><i class="fa fa-clipboard"></i> <span class="nav-label">Verifikasi Peraturan</span></a>
                 </li>
                 @endif
+                <li class="{{ Request::is('*/portofolio*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.portofolio.index') }}"><i class="fa fa-picture-o"></i> <span class="nav-label">Portofolio</span></a>
+                </li>
 
                 @if(auth()->user()->role == 'admin')
                 <li class="{{ Request::is('*/pengaturan*') ? 'active' : '' }}">

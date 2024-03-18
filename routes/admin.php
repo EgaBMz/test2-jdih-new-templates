@@ -62,7 +62,16 @@ Route::get('/berita/create', 'BeritaController@create')->name('berita.create');
 Route::post('/berita/post', 'BeritaController@store')->name('berita.store');
 Route::get('/berita/{berita}/edit', 'BeritaController@edit')->name('berita.edit');
 Route::put('/berita/{berita}', 'BeritaController@update')->name('berita.update');
-Route::delete('/berita/{berita}', 'BeritaController@destroy')->name('berita.destroy');
+Route::get('/berita/destroy/{berita}', 'BeritaController@destroy')->name('berita.hapus');
+
+
+//Master Portofolio
+Route::get('/portofolio', 'PortofolioController@index')->name('portofolio.index');
+Route::get('/portofolio/create', 'PortofolioController@create')->name('portofolio.create');
+Route::post('/portofolio/post', 'PortofolioController@store')->name('portofolio.store');
+Route::get('/portofolio/{portofolio}/edit', 'PortofolioController@edit')->name('portofolio.edit');
+Route::put('/portofolio/{portofolio}', 'PortofolioController@update')->name('portofolio.update');
+Route::get('/portofolio/destroy/{portofolio}', 'PortofolioController@destroy')->name('portofolio.hapus');
 
 //Master Log Survey Gender
 Route::get('/survey/gender', 'SurveyGenderController@index')->name('survey.gender.index');

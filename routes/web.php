@@ -25,6 +25,7 @@ Route::get('/image/{image}', 'LandingController@image')->name('image');
 Route::post('/pencarian', 'LandingController@pencarian')->name('pencarian');
 Route::get('/profil', 'LandingController@profil')->name('profil');
 Route::get('/kontak', 'LandingController@kontak')->name('kontak');
+Route::get('/layanan', 'LandingController@layanan')->name('layanan');
 Route::get('/berita', 'LandingController@berita')->name('berita');
 Route::get('/produk/hukum', 'LandingController@produk_hukum')->name('produk_hukum');
 Route::get('/berita/{berita}/detail', 'LandingController@berita_detail')->name('berita.detail');
@@ -32,6 +33,10 @@ Route::get('/propemperda', 'LandingController@propemperda')->name('propemperda')
 Route::get('/bankumaskin', 'LandingController@bankumaskin')->name('bankumaskin');
 Route::get('/statistik', 'LandingController@statistik')->name('statistik');
 Route::post('/surveygender', 'LandingController@simpan_surveygender')->name('simpan_surveygender');
+Route::get('/portofolio', 'LandingController@portofolio')->name('portofolio');
+Route::get('/portofolio/{portofolio}/detail', 'LandingController@portofolio_detail')->name('portofolio.detail');
+Route::delete('/admin/portofolio/{portofolio}', 'PortofolioController@destroy')->name('admin.portofolio.destroy');
+Route::delete('/admin/berita/{berita}', 'BeritaController@destroy')->name('admin.berita.destroy');
 
 //File
 Route::get('/file/berita/{file}', 'FileController@file_berita')->name('file.berita');

@@ -63,6 +63,7 @@
                                     </td>
                                     <td align="center">
                                         <a href="{{ route('admin.berita.edit', $data->id) }}" type="button" class="btn btn-primary btn-xs">Ubah</a>
+                                        <a href="{{ route('admin.berita.hapus', $data->id) }}" type="button" class="btn btn-primary btn-xs" style="background-color: #ff0000;">Hapus</a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -74,14 +75,7 @@
                 </div>
             </div>
         <!-- </div> -->
-
-        <form action="" method="post" id="deleteForm">
-            @csrf
-            @method("DELETE")
-            <button type="submit" style="display:none">Hapus</button>
-        </form>
-@endsection
-
+        @endsection
 @push('scripts')
     <script src="{{ asset('assets/js/plugins/footable/footable.all.min.js') }}"></script>
     <script src="{{ asset('assets/js/inspinia.js') }}"></script>
@@ -94,33 +88,4 @@
         });
     </script>
 
-    <script src="{{ asset('assets/js/sweetalert.js') }}"></script>
-    <script>
-        $('button#delete').on('click', function(e){
-                e.preventDefault();
-
-                var href = $(this).attr('href');
-
-                Swal.fire({
-                    title: 'Apakah anda yakin hapus data ini?',
-                    text: "Data yang dihapus bisa dikembalikan!",
-                    type: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Ya, Hapus!'
-                    }).then((result) => {
-                    if (result.value) {
-                        document.getElementById('deleteForm').action = href;
-                        document.getElementById('deleteForm').submit();
-
-                        Swal.fire(
-                            'Berhasil!',
-                            'Data telah dihapus.',
-                            'success'
-                        )
-                    }
-                })
-            })
-    </script>
 @endpush

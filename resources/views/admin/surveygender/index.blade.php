@@ -7,7 +7,7 @@
                 <div class="float-left m-r-md">
                     <i class="fa fa-globe text-navy mid-icon"></i>
                 </div>
-                <h2> <b style="color:green">{{ $title }}</b></h2>
+                <h2> <b style="color:#0a4afa;(51, 0, 255)">{{ $title }}</b></h2>
                 <span>{{ config('app.name') }}</span>
             </div>
         </div>
